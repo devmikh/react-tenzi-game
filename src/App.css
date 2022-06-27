@@ -1,0 +1,95 @@
+html, body, #root, .App {
+  height: 100%;
+}
+
+body {
+  background-color: lightblue;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 50%;
+  height: 90%;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dice-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.die {  
+  padding: 10px;  
+  background-color: tomato;  
+  width: 64px;  
+  height: 64px;  
+  border-radius: 10%;
+}
+
+.dot {
+  display: block;
+     width: 16px;
+     height: 16px;
+     border-radius: 50%;
+     background-color:white;
+  }
+
+/* Dice Faces */
+
+/* First Face */
+.first-face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Second Face */
+.second-face {
+  display: flex;
+  justify-content: space-between;
+}
+
+.second-face .dot:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+/* Third Face */
+.third-face {
+  display: flex;
+  justify-content: space-between;
+}
+
+.third-face .dot:nth-of-type(3) {
+  align-self: flex-end;
+}
+
+.third-face .dot:nth-of-type(2) {
+  align-self: center;
+}
+
+/* Fourth Face, Fifth Face & Sixth Face*/
+.fourth-face, .fifth-face, .sixth-face {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fourth-face .column, .fifth-face .column, .sixth-face .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fifth-face .column:nth-of-type(2) {
+  justify-content: center;
+}
