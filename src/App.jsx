@@ -8,6 +8,8 @@ export default function App() {
 
   const [dice, setDice] = React.useState(createNewDice());
   const [hasWon, setHasWon] = React.useState(false);
+  const [bestRolls, setBestRolls] = React.useState(localStorage.getItem("bestRolls") || 0);
+  const [currentRolls, setCurrentRolls] = React.useState(0);
 
   React.useEffect(() => {
     const allSelected = dice.every(die => die.isSelected);
@@ -39,12 +41,17 @@ export default function App() {
 
   function rollDice() {
     if (hasWon) {
+      if (bestRolls === 0 || currentRolls < bestRolls) {
+        setBestRolls(currentRolls);
+        localStorage.setItem("bestRolls", currentRolls);
+      }
       setHasWon(false);
       setDice(createNewDice());
+      setCurrentRolls(0);
     } else {
       setDice(oldDice => oldDice.map(oldDie => oldDie.isSelected ? oldDie : createRandomDie()));
+      setCurrentRolls(oldRolls => oldRolls + 1);
     }
-    
   }
 
   const diceElements = dice.map(die => {
@@ -66,6 +73,12 @@ export default function App() {
         <button className="roll-button" onClick={rollDice}>
           {hasWon ? "NEW GAME" : "ROLL"}
         </button>
+        <div className="current-rolls">
+          <h3>Rolls: {currentRolls}</h3>
+        </div>
+        <div className="best-rolls">
+          <h3>Best: {bestRolls}</h3>
+        </div>
       </main>
     </div>
   );
