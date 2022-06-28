@@ -188,6 +188,7 @@ main {
 
   main {
     gap: 10px;
+    height: 100%;
   }
 
   .info-section--title {
@@ -198,9 +199,8 @@ main {
     font-size: 1rem;
   }
 
-  body {
-    background-color: white;
-    background-image: none;
+  .roll-button {
+    margin-top: 20px;
   }
 
   .die {
