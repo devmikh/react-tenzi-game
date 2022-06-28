@@ -1,0 +1,8 @@
+{
+  "short_name": "Tenzi Game",
+  "name": "Time to roll some dices!",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
