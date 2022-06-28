@@ -2,10 +2,20 @@ import React from 'react';
 import './App.css';
 import Die from './components/Die';
 import { nanoid } from 'nanoid';
+import Confetti from 'react-confetti';
 
 export default function App() {
 
   const [dice, setDice] = React.useState(createNewDice());
+  const [hasWon, setHasWon] = React.useState(false);
+
+  React.useEffect(() => {
+    const allSelected = dice.every(die => die.isSelected);
+    const allEqual = dice.every(die => die.value === dice[0].value);
+    if (allSelected && allEqual) {
+      setHasWon(true);  
+    }
+  }, [dice])
 
   function createRandomDie() {
     return {
@@ -28,7 +38,13 @@ export default function App() {
   }
 
   function rollDice() {
-    setDice(oldDice => oldDice.map(oldDie => oldDie.isSelected ? oldDie : createRandomDie()));
+    if (hasWon) {
+      setHasWon(false);
+      setDice(createNewDice());
+    } else {
+      setDice(oldDice => oldDice.map(oldDie => oldDie.isSelected ? oldDie : createRandomDie()));
+    }
+    
   }
 
   const diceElements = dice.map(die => {
@@ -42,12 +58,13 @@ export default function App() {
 
   return (
     <div className="App">
+      {hasWon && <Confetti />}
       <main>
         <div className="dice-container">
           {diceElements}
         </div>
         <button className="roll-button" onClick={rollDice}>
-          ROLL
+          {hasWon ? "NEW GAME" : "ROLL"}
         </button>
       </main>
     </div>
