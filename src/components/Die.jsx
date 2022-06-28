@@ -1,5 +1,9 @@
 export default function Die(props) {
 
+  const styles = {
+    backgroundColor: props.isSelected ? "lightgreen" : "tomato"
+  }
+
   // Get correct die face to render depending on the passed value
   function getDieFace(value) {
     switch (value) {
@@ -73,7 +77,7 @@ export default function Die(props) {
   }
 
   return (
-    <div className="die-container">
+    <div className="die-container" style={styles} onClick={props.selectDie}>
         {getDieFace(props.value)}
     </div>
   )

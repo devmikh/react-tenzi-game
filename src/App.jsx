@@ -10,7 +10,8 @@ export default function App() {
   function createRandomDie() {
     return {
       id: nanoid(),
-      value: Math.ceil(Math.random() * 6)
+      value: Math.ceil(Math.random() * 6),
+      isSelected: false
     }
   }
 
@@ -22,8 +23,18 @@ export default function App() {
     return newDice;
   }
 
-  const diceElements = dice.map(die => <Die key={die.id} value={die.value} />);
-  console.log(dice);
+  function selectDie(id) {
+    setDice(oldDice => oldDice.map(oldDie => oldDie.id === id ? { ...oldDie, isSelected: !oldDie.isSelected} : oldDie));
+  }
+
+  const diceElements = dice.map(die => {
+    return <Die
+              key={die.id}
+              value={die.value}
+              isSelected={die.isSelected}
+              selectDie={() => selectDie(die.id)}  
+            />
+  });
 
   return (
     <div className="App">

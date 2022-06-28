@@ -29,12 +29,15 @@ main {
   gap: 20px;
 }
 
+.die-container {
+  border-radius: 10%;
+}
+
 .die {  
-  padding: 10px;  
-  background-color: tomato;  
+  padding: 10px;
   width: 64px;  
   height: 64px;  
-  border-radius: 10%;
+  
 }
 
 .dot {
