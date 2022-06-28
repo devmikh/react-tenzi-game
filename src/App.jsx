@@ -27,6 +27,10 @@ export default function App() {
     setDice(oldDice => oldDice.map(oldDie => oldDie.id === id ? { ...oldDie, isSelected: !oldDie.isSelected} : oldDie));
   }
 
+  function rollDice() {
+    setDice(oldDice => oldDice.map(oldDie => oldDie.isSelected ? oldDie : createRandomDie()));
+  }
+
   const diceElements = dice.map(die => {
     return <Die
               key={die.id}
@@ -42,6 +46,9 @@ export default function App() {
         <div className="dice-container">
           {diceElements}
         </div>
+        <button className="roll-button" onClick={rollDice}>
+          ROLL
+        </button>
       </main>
     </div>
   );
