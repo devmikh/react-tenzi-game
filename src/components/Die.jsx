@@ -5,66 +5,66 @@ export default function Die(props) {
     switch (value) {
       case 1:
         return (
-          <div class="die first-face">
-            <span class="dot"> </span>
+          <div className="die first-face">
+            <span className="dot"> </span>
           </div>
         );
       case 2:
         return (
-          <div class="die second-face">
-            <span class="dot"> </span>
-            <span class="dot"> </span>
+          <div className="die second-face">
+            <span className="dot"> </span>
+            <span className="dot"> </span>
           </div>
         );
       case 3:
         return (
-          <div class="die third-face">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+          <div className="die third-face">
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
           </div>
         );
       case 4:
         return (
-          <div class="die fourth-face">
-            <div class="column">
-                <span class="dot"></span>
-                <span class="dot"></span>
+          <div className="die fourth-face">
+            <div className="column">
+                <span className="dot"></span>
+                <span className="dot"></span>
             </div>
-            <div class="column">
-                <span class="dot"></span>
-                <span class="dot"></span>
+            <div className="column">
+                <span className="dot"></span>
+                <span className="dot"></span>
             </div>
           </div>
         );
       case 5:
         return (
-          <div class="die fifth-face">
-            <div class="column">
-                <span class="dot"></span>
-                <span class="dot"></span>
+          <div className="die fifth-face">
+            <div className="column">
+                <span className="dot"></span>
+                <span className="dot"></span>
             </div>
-            <div class="column">
-              <span class="dot"></span>
+            <div className="column">
+              <span className="dot"></span>
             </div>
-            <div class="column">
-                <span class="dot"></span>
-                <span class="dot"></span>
+            <div className="column">
+                <span className="dot"></span>
+                <span className="dot"></span>
             </div>
           </div>
         );
       case 6:
         return (
-          <div class="die sixth-face">
-            <div class="column">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+          <div className="die sixth-face">
+            <div className="column">
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
             </div>
-            <div class="column">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+            <div className="column">
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
             </div>
           </div>
         );

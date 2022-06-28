@@ -1,21 +1,35 @@
+import React from 'react';
 import './App.css';
 import Die from './components/Die';
+import { nanoid } from 'nanoid';
 
 export default function App() {
+
+  const [dice, setDice] = React.useState(createNewDice());
+
+  function createRandomDie() {
+    return {
+      id: nanoid(),
+      value: Math.ceil(Math.random() * 6)
+    }
+  }
+
+  function createNewDice() {
+    const newDice = [];
+    for (let i = 0; i < 10; i++) {
+      newDice.push(createRandomDie());
+    }
+    return newDice;
+  }
+
+  const diceElements = dice.map(die => <Die key={die.id} value={die.value} />);
+  console.log(dice);
+
   return (
     <div className="App">
       <main>
         <div className="dice-container">
-          <Die value={1} />
-          <Die value={2} />
-          <Die value={3} />
-          <Die value={4} />
-          <Die value={5} />
-          <Die value={6} />
-          <Die value={1} />
-          <Die value={1} />
-          <Die value={1} />
-          <Die value={1} />
+          {diceElements}
         </div>
       </main>
     </div>
