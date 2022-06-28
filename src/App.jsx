@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Header from './components/Header';
 import Die from './components/Die';
 import { nanoid } from 'nanoid';
 import Confetti from 'react-confetti';
@@ -67,18 +68,22 @@ export default function App() {
     <div className="App">
       {hasWon && <Confetti />}
       <main>
+        <Header />
         <div className="dice-container">
           {diceElements}
         </div>
         <button className="roll-button" onClick={rollDice}>
-          {hasWon ? "NEW GAME" : "ROLL"}
+          {hasWon ? "New Game" : "Roll"}
         </button>
-        <div className="current-rolls">
-          <h3>Rolls: {currentRolls}</h3>
+        <div className="rolls-container">
+          <div className="current-rolls">
+            <h3>Rolls: {currentRolls}</h3>
+          </div>
+          <div className="best-rolls">
+            <h3>Best: {bestRolls}</h3>
+          </div>
         </div>
-        <div className="best-rolls">
-          <h3>Best: {bestRolls}</h3>
-        </div>
+        
       </main>
     </div>
   );
