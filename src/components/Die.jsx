@@ -1,7 +1,7 @@
 export default function Die(props) {
 
   const styles = {
-    backgroundColor: props.isSelected ? "lightgreen" : "tomato"
+    backgroundColor: props.isSelected ? "#74EBD5" : "white"
   }
 
   // Get correct die face to render depending on the passed value
