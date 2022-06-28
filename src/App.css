@@ -73,7 +73,7 @@ main {
   height: 16px;
   border-radius: 50%;
   background-color:#000000;
-  }
+}
 
 /* Dice Faces */
 
@@ -184,7 +184,13 @@ main {
   }
 }
 
-@media only screen and (max-height: 600px) {
+@media only screen and (max-width: 400px) {
+  .dice-container {
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-height: 800px) {
 
   main {
     gap: 10px;
@@ -213,3 +219,4 @@ main {
     height: 12px;
   }
 }
+
