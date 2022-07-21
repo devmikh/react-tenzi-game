@@ -4,7 +4,7 @@
 
 Tenzi Game built with React. Roll the dice until all of them have the same number. Freeze dice to keep their value between the rolls. The less rolls you use to complete the game, the better!
 
-[Try it out now](https://devmikh.github.io/react-tenzi-game/)
+[Try it out here](https://devmikh.github.io/react-tenzi-game/)
 
 ## Screenshots
 
